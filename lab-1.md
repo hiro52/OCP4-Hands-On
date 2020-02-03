@@ -6,6 +6,9 @@
     sudo -i  
     echo ${GUID}  
     Install the AWS CLI tools:  
+    
+    $ GUID=yourname
+    $ oc new-project pipeline-${GUID}-dev --description="Cat of the Day Development Environment" --display-name="Cat Of The Day - Dev"
  
 
 
