@@ -56,5 +56,27 @@ $ sudo -i
 # oc completion bash >/etc/bash_completion.d/openshift
 ```
  8. "ctrl + D" で root から抜けます。
- 9.　AWS にアクセスするための認証キーを credentials ファイルに記述します。
-     ※必要な認証キーはメールに記載されていますのでご確認ください。
+ 9.　AWS にアクセスするための認証キーを credentials ファイルに記述します。  
+     ※必要な認証キーはメールに記載されていますのでご確認ください。  
+       <YOURACCESSKEY> 及び、<YOURSECRETKEY> の部分をご自身のものに変更ください  
+
+```
+$ export AWSKEY=<YOURACCESSKEY>
+$ export AWSSECRETKEY=<YOURSECRETKEY>
+$ export REGION=us-east-2
+
+$ mkdir $HOME/.aws
+$ cat << EOF >>  $HOME/.aws/credentials
+[default]
+aws_access_key_id = ${AWSKEY}
+aws_secret_access_key = ${AWSSECRETKEY}
+region = $REGION
+EOF 
+```
+
+ 10. 認証情報がきちんと設定されていることを確認します。  
+```
+aws sts get-caller-identity
+```
+
+ 11. 
