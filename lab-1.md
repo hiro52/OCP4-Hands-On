@@ -10,17 +10,21 @@ $ sudo -i
 
  3. AWS の CLI ツールをインストールします。  
 ```
-※ AWS コマンドラインインターフェースのダウンロード  
+AWS コマンドラインインターフェースのダウンロード  
+  
 # curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"  
 # unzip awscli-bundle.zip`  
   
-※ AWS CLI のインストール  
+AWS CLI のインストール  
+  
 # ./awscli-bundle/install -i /usr/local/aws -b /bin/aws  
-
+  
 ※ AWS CLI の動作確認  
+
 # aws --version  
 
 ※ ダウンロードファイルの削除  
+  
 # rm -rf /root/awscli-bundle /root/awscli-bundle.zip  
 ```
 ※ OpenShift インストーラーにはこれらのツールは必要ありませんが、後で使用して資格情報を確認し、作成されたAWSリソースを一覧表示します。  
