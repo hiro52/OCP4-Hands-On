@@ -36,15 +36,15 @@ $ sudo -i
 
  5. OpenShift のコマンドラインツール oc ツールをダウンロードします。  
 ```
-wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_VERSION}/openshift-client-linux-${OCP_VERSION}.tar.gz
-tar zxvf openshift-client-linux-${OCP_VERSION}.tar.gz -C /usr/bin
-rm -f openshift-client-linux-${OCP_VERSION}.tar.gz /usr/bin/README.md
-chmod +x /usr/bin/oc
+# wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_VERSION}/openshift-client-linux-${OCP_VERSION}.tar.gz
+# tar zxvf openshift-client-linux-${OCP_VERSION}.tar.gz -C /usr/bin
+# rm -f openshift-client-linux-${OCP_VERSION}.tar.gz /usr/bin/README.md
+# chmod +x /usr/bin/oc
 ```
 
  6. OpenShift インストーラーと CLI の存在を確認します。  
 ```
-ls -l /usr/bin/{oc,openshift-install}
+# ls -l /usr/bin/{oc,openshift-install}
 ```
 出力イメージ
 ```
@@ -53,8 +53,8 @@ ls -l /usr/bin/{oc,openshift-install}
 ```
  7. bash の設定を行います。  
 ```
-oc completion bash >/etc/bash_completion.d/openshift
+# oc completion bash >/etc/bash_completion.d/openshift
 ```
  8. "ctrl + D" で root から抜けます。
  9.　AWS にアクセスするための認証キーを credentials ファイルに記述します。
- 
+     ※必要な認証キーはメールに記載されていますのでご確認ください。
