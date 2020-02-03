@@ -13,7 +13,7 @@ $ sudo -i
 AWS コマンドラインインターフェースのダウンロード  
   
 # curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"  
-# unzip awscli-bundle.zip`  
+# unzip awscli-bundle.zip  
   
 AWS CLI のインストール  
   
@@ -83,4 +83,9 @@ EOF
 aws sts get-caller-identity
 ```
 
- 11. 
+ 11. https://cloud.openshift.com/clusters/install にご自身のカスタマーポータルアカウントでログインします。  
+ 12. AWS をクリックします。  
+ 13. Installer-Provisioned-Infrastructure をクリックします。  
+ 14. Pull Secret を見つけ、Copy Pull Secret をクリックし、クリップボードに内容をコピーし、テキストファイルに張り付けて保存します。  
+ 15. 内容はこんな感じです。  
+ 
