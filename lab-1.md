@@ -1,4 +1,4 @@
-1-1. OCPインストール前の準備  
+# 1. OCPインストール前の準備  
 
  1. ssh で環境にログインします。  
     ※ AWS のアカウント情報は環境払い出した後に受信するメールでご確認ください。
@@ -88,4 +88,11 @@ aws sts get-caller-identity
  13. Installer-Provisioned-Infrastructure をクリックします。  
  14. Pull Secret を見つけ、Copy Pull Secret をクリックし、クリップボードに内容をコピーし、テキストファイルに張り付けて保存します。  
  15. 内容はこんな感じです。  
-    <img src="secret.jpg" alt="attach:cat" title="attach:cat" width="700"> 
+   
+    <img src="secret.jpg" alt="attach:cat" title="attach:cat" width="700">   
+
+ 16. ファイルは閉じるか最小化して、また、コマンドラインに戻り、ssh のキーペアを作成します。
+ ```
+ ssh-keygen -f ~/.ssh/cluster-${GUID}-key -N ''
+ ```
+ 
