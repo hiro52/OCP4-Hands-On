@@ -10,37 +10,51 @@ $ sudo -i
 
  3. AWS の CLI ツールをインストールします。  
 ```
-#AWS コマンドラインインターフェースのダウンロード  
+  # AWS コマンドラインインターフェースのダウンロード  
 # curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"  
 # unzip awscli-bundle.zip`  
   
-#AWS CLI のインストール  
-./awscli-bundle/install -i /usr/local/aws -b /bin/aws  
+  # AWS CLI のインストール  
+# ./awscli-bundle/install -i /usr/local/aws -b /bin/aws  
 
-#AWS CLI の動作確認  
-aws --version  
+  # AWS CLI の動作確認  
+# aws --version  
 
-#ダウンロードファイルの削除  
-rm -rf /root/awscli-bundle /root/awscli-bundle.zip  
+  # ダウンロードファイルの削除  
+# rm -rf /root/awscli-bundle /root/awscli-bundle.zip  
 ```
-※ OpenShift インストーラーにはこれらのツールは必要ありませんが、後で使用して資格情報を確認し、作成されたAWSリソースを一覧表示します。
+※ OpenShift インストーラーにはこれらのツールは必要ありませんが、後で使用して資格情報を確認し、作成されたAWSリソースを一覧表示します。  
 
  4. OpenShift のインストールバイナリをダウンロードします。 
 ```
-OCP_VERSION=4.1.0
-wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_VERSION}/openshift-install-linux-${OCP_VERSION}.tar.gz
-tar zxvf openshift-install-linux-${OCP_VERSION}.tar.gz -C /usr/bin
-rm -f openshift-install-linux-${OCP_VERSION}.tar.gz /usr/bin/README.md
-chmod +x /usr/bin/openshift-install
+# OCP_VERSION=4.1.0
+# wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_VERSION}/openshift-install-linux-${OCP_VERSION}.tar.gz
+# tar zxvf openshift-install-linux-${OCP_VERSION}.tar.gz -C /usr/bin
+# rm -f openshift-install-linux-${OCP_VERSION}.tar.gz /usr/bin/README.md
+# chmod +x /usr/bin/openshift-install
 ```
 
-aa
+ 5. OpenShift のコマンドラインツール oc ツールをダウンロードします。  
+```
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_VERSION}/openshift-client-linux-${OCP_VERSION}.tar.gz
+tar zxvf openshift-client-linux-${OCP_VERSION}.tar.gz -C /usr/bin
+rm -f openshift-client-linux-${OCP_VERSION}.tar.gz /usr/bin/README.md
+chmod +x /usr/bin/oc
+```
 
+ 6. OpenShift インストーラーと CLI の存在を確認します。  
+```
+ls -l /usr/bin/{oc,openshift-install}
+```
+出力イメージ
+```
+-rwxr-xr-x. 2 root root  76593328 May 19 23:53 /usr/bin/oc*
+-rwxr-xr-x. 1 root root 216764576 May 22 03:22 /usr/bin/openshift-install*
+```
+ 7. bash の設定を行います。  
+```
+oc completion bash >/etc/bash_completion.d/openshift
+```
+ 8. "ctrl + D" で root から抜けます。
+ 9.　AWS にアクセスするための認証キーを credentials ファイルに記述します。
  
- 
- aa
-
-
-
-
- 2.sudo コマンドを利用して root 権限を取得します。  
