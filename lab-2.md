@@ -1,13 +1,15 @@
 # OpenShift コンテナプラットフォームのインストール
 このセクションでは、OpenShiftインストーラーを使用して、可用性の高いOpenShift Container PlatformクラスターをAWSにデプロイします。  
-※インストーラーの詳細に関しては以下ご確認ください。
+※インストーラーの詳細に関しては以下ご確認ください。  
 https://https://docs.openshift.com/container-platform/4.1/installing/installing_aws/installing-aws-default.html  
 https://github.com/openshift/installer/blob/master/docs/user/overview.md  
 インストーラーによって生成される主な資産は、以下のマシンの Ignition 構成です。  
+  
 ・ブートストラップ  
 ・マスター  
 ・ワーカー  
-これら3つの構成があれば、OpenShiftクラスターが開始可能です。クラスターをブートストラップするプロセスは次のようになります。
+  
+これら3つの構成があれば、OpenShiftクラスターが開始可能です。クラスターをブートストラップするプロセスは次のようになります。  
 
 1. ブートストラップマシンが起動し、マスターマシンの起動に必要なリモートリソースのホストを開始します。  
 2. マスターマシンは、ブートストラップマシンからリモートリソースを取得し、ブートを完了します。  
@@ -18,3 +20,4 @@ https://github.com/openshift/installer/blob/master/docs/user/overview.md
 7. ブートストラップノードは、OpenShift 固有のコンポーネントを新しく形成されたコントロールプレーンに入れ込みます。  
 8. その後、インストーラーはブートストラップノードを破棄します。  
 
+2.1 OpenShift インストーラの起動
