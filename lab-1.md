@@ -88,4 +88,4 @@ aws sts get-caller-identity
  13. Installer-Provisioned-Infrastructure をクリックします。  
  14. Pull Secret を見つけ、Copy Pull Secret をクリックし、クリップボードに内容をコピーし、テキストファイルに張り付けて保存します。  
  15. 内容はこんな感じです。  
- 
+    <img src="secret.jpg" alt="attach:cat" title="attach:cat" width="700"> 
